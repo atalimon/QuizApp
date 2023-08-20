@@ -1,0 +1,119 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    background-color: darkolivegreen;
+}
+
+#startbutton, #restartbutton {
+    position: absolute;
+    top: 0;
+    background-color: aqua;
+    width: 7.5em;
+    height: 4em;
+    border-radius: 25px;
+}
+
+.start-display {
+    position: absolute;
+    margin-top: 25%;
+    margin-left: 25%;
+    background-color: aliceblue;
+    width: 50%;
+    height: 20%;
+    border-radius: 25px;
+}
+
+.display-container {
+    margin-top: 25%;
+    margin-left: 25%;
+    position: absolute;
+    background-color: bisque;
+    width: 50%;
+    height: 50%;
+    border-radius: 25px;
+    align-items: center;
+    justify-content: center;
+}
+
+.headofdisplay {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    height: 18%;
+    border: 5px solid black;
+}
+.numbercount {
+    display: flex;
+    margin-right: 25%;
+}
+
+.timercontainer {
+    flex-direction: column;
+    display: flex;
+    margin-left: 25%;
+}
+
+.questioncontainer {
+    display: flex;
+    border: 5px solid blue;
+    height: 70%;
+    width: 100%;
+}
+
+#nextbutton {
+    background-color: blueviolet;
+    height: 80%;
+    width: 25%;
+    border-radius: 25px;
+}
+
+.buttoncontainer {
+    display: flex;
+    border: 5px solid red;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 11%;
+}
+
+
+.scorecontainer {
+    display: none;
+    margin-top: 25%;
+    margin-left: 25%;
+    position: absolute;
+    background-color: bisque;
+    width: 50%;
+    height: 50%;
+    border-radius: 25px;
+    align-items: center;
+    justify-content: center;
+    
+
+}
+
+.score {
+    display: flex;
+    border: 5px solid black;
+    width: 100%;
+    height: 40%;
+    margin-top: 20%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#restart {
+    margin-top: 5%;
+    background-color: blueviolet;
+    width: 25%;
+    height: 25%;
+    border-radius: 25px;
+}
+
