@@ -9,23 +9,26 @@ body {
     background-color: darkolivegreen;
 }
 
-#startbutton, #restartbutton {
+#start-button {
     position: absolute;
-    top: 0;
+    top: 5;
     background-color: aqua;
     width: 7.5em;
     height: 4em;
     border-radius: 25px;
 }
 
-.start-display {
+.start-screen {
+    display: flex;
     position: absolute;
     margin-top: 25%;
     margin-left: 25%;
     background-color: aliceblue;
     width: 50%;
-    height: 20%;
+    height: 50%;
     border-radius: 25px;
+    justify-content: center;
+    align-items: center;
 }
 
 .display-container {
@@ -36,8 +39,7 @@ body {
     width: 50%;
     height: 50%;
     border-radius: 25px;
-    align-items: center;
-    justify-content: center;
+
 }
 
 .headofdisplay {
@@ -48,25 +50,25 @@ body {
     height: 18%;
     border: 5px solid black;
 }
-.numbercount {
+.number-of-count {
     display: flex;
     margin-right: 25%;
 }
 
-.timercontainer {
+.timer-div {
     flex-direction: column;
     display: flex;
     margin-left: 25%;
 }
 
-.questioncontainer {
+.container {
     display: flex;
     border: 5px solid blue;
     height: 70%;
     width: 100%;
 }
 
-#nextbutton {
+#next-button {
     background-color: blueviolet;
     height: 80%;
     width: 25%;
@@ -83,7 +85,7 @@ body {
 }
 
 
-.scorecontainer {
+.score-container {
     display: none;
     margin-top: 25%;
     margin-left: 25%;
@@ -109,11 +111,34 @@ body {
     flex-direction: column;
 }
 
-#restart {
+#restartbutton {
     margin-top: 5%;
     background-color: blueviolet;
     width: 25%;
     height: 25%;
     border-radius: 25px;
+}
+
+.hide {
+    display: none;
+}
+
+#aboutgame {
+    font-size: large;
+    padding: 10px;
+    position: absolute;
+    top: 10%;
+}
+
+
+.container-mid p {
+    font-size: large;
+    margin-top: 5%;
+}
+
+.container-mid button {
+    width: 8em;
+    height: 4.5em;
+    margin-top: 10%;
 }
 
