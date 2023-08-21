@@ -1,42 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
     <title>Quiz App</title>
     <script src="script.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
-    <div class="start-display">
+    <div class="start-screen">
         <p id="aboutgame">Rules are simple pick correct answer and earn points</p>
-        <button id="startbutton">Start</button>
+        <button id="start-button">Start</button>
     </div>
-            <div class="display-container">
-                <div class="headofdisplay">
-                    <div class="numbercount">
-                        <p id="numbercount">1 of 3 question</p>
-                    </div>
-                    <div class="timercontainer">
-                        <img src="!"/>
-                        <p id="timercountdown">10sec</p> 
-                    </div>
-                </div>
-                <div class="questioncontainer">
-
-                </div>
-                <div class="buttoncontainer">
-                <button id="nextbutton">Next</button>
-                </div>
+    <div class="display-container">
+        <div class="headofdisplay">
+            <div class="number-of-count">
+                <span id="number-of-question">1 of 3 question</span>
             </div>
-    
-
-<div class="scorecontainer hide">
-    <div class="score">
-        <p id="userscore">1 out of 10</p>
-        <button id="restartbutton">restart</button>
+            <div class="timer-div">
+                <img />
+                <span id="time-left">10sec</span> 
+            </div>
+        </div>
+        <div class="container">
+        </div>
+        <div class="buttoncontainer">
+            <button id="next-button">Next</button>
+        </div>
     </div>
 
-</div>
-
+    <div class="score-container hide">
+        <div class="score">
+            <p id="userscore">1 out of 10</p>
+            <button id="restartbutton">Restart</button>
+        </div>
+    </div>
 </body>
 </html>
