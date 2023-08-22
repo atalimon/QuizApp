@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let restartButton = document.getElementById("restartbutton");
     let questionCount;
     let scoreCount = 0;
+    let countdown;
+    let count = 10;
 
 // Questions and answers array
 
@@ -23,6 +25,17 @@ document.addEventListener("DOMContentLoaded", () => {
     {id:"5", question:"Whats the capital city of North Korea?", answer:['Pyongyan', 'Mary', 'Incheon', 'Seoul'], correct:"Pyongyan"},
     {id:"6", question:"Whats the capital city of Taiwan?", answer:['Taipei', 'Mary', 'Hong Kong', 'Osaka'], correct:"Taipei"}];
 
+
+    const timerDisplay = () => {
+        countdown = setInterval(() => {
+            count--;
+            timerCountdown.innerHTML = `${count}s`;
+            if(count == 0){
+                clearInterval(countdown);
+                displayNext();
+            }
+        },1000);
+    };
 
     const quizDisplay = (questionCount) => {
         let quizCards = document.querySelectorAll('.container-mid');
@@ -62,9 +75,12 @@ document.addEventListener("DOMContentLoaded", () => {
         questionContainer.innerHTML = "";
         questionCount = 0;
         scoreCount = 0;
-        count = 11;
+        countdown = 11;
+        clearInterval(countdown);
+        timerDisplay();
         createQuiz();
         quizDisplay(questionCount);
+        
     }   
 
     startButton.addEventListener("click", () => {
@@ -77,6 +93,9 @@ document.addEventListener("DOMContentLoaded", () => {
         startDisplay.classList.remove("hide");
         displayContainer.classList.add("hide");
 
+
+
+        
     };
 
 });
