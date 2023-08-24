@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let questionCounter = document.querySelector("#number-of-question");
     let timerCountdown = document.querySelector("#time-left");
     let questionContainer = document.querySelector(".container");
-    let nextButton = document.querySelector("#nextbutton");
+    let nextButton = document.querySelector("#next-button");
     let scoreContainer = document.querySelector(".score-container");
     let userScore = document.querySelector("#userscore");
     let restartButton = document.getElementById("restartbutton");
@@ -17,15 +17,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Questions and answers array
 
-    const quizArray = [{id:"0", question:"Whats the capital city of Turkmenistan?", answer:['ashgabat', 'Mary', 'Arkadag', 'Lebap'], correct:"ashagabat"},
+    const quizArray = [{id:"0", question:"Whats the capital city of Turkmenistan?", answer:['ashgabat', 'Mary', 'Arkadag', 'Lebap'], correct:"ashgabat"},
     {id:"1", question:"Whats the capital city of Uzbekistan?", answer:['Baghdad', 'Mary', 'Buhara', 'Tashkent'], correct:"Tashkent"},
     {id:"2", question:"Whats the capital city of USA?", answer:['New York', 'Mary', 'Washington', 'San Andreas'], correct:"Washington"},
     {id:"3", question:"Whats the capital city of Ireland?", answer:['Mary', 'Dublin', 'Jerusalem', 'Macau'], correct:"Dublin"},
     {id:"4", question:"Whats the capital city of Japan?", answer:['Kyoto', 'Mary', 'Osaka', 'Tokyo'], correct:"Tokyo"},
     {id:"5", question:"Whats the capital city of North Korea?", answer:['Pyongyan', 'Mary', 'Incheon', 'Seoul'], correct:"Pyongyan"},
     {id:"6", question:"Whats the capital city of Taiwan?", answer:['Taipei', 'Mary', 'Hong Kong', 'Osaka'], correct:"Taipei"}];
+  
 
 
+    restartButton.addEventListener('click', () => {
+        initial();
+        displayContainer.classList.add('hide');
+        scoreContainer.classList.add('hide')
+    });
+
+    nextButton.addEventListener('click', (displayNext = () => {
+        questionCount += 1;
+        if (questionCount == quizArray.length) {
+            displayContainer.classList.add("hide");
+            scoreContainer.classList.add('hide');
+            userScore.innerHTML = "Your Score is " + scoreCount + " out of " + questionCount;
+        } else {
+            questionCounter.innerHTML = questionCount + 1 + ' of ' + quizArray.length + ' Question'
+            quizDisplay(questionCount);
+            count = 11;
+            clearInterval(countdown)
+            timerDisplay();
+        }
+    })
+    )
+    
     const timerDisplay = () => {
         countdown = setInterval(() => {
             count--;
@@ -61,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
             question_div.classList.add("question");
             question_div.innerHTML = i.question;
             div.appendChild(question_div)
-
+            
             div.innerHTML += `<button class="option-div" onclick="checker(this)">${i.answer[0]}</button>
             <button class="option-div" onclick="checker(this)">${i.answer[1]}</button>
             <button class="option-div" onclick="checker(this)">${i.answer[2]}</button>
@@ -69,6 +92,29 @@ document.addEventListener("DOMContentLoaded", () => {
             `;
             questionContainer.appendChild(div);
         }
+    }
+
+    function checker(userOption) {
+        let userSolution = userOption.innerText;
+        let question = document.getElementsByClassName('container-mid')[questionCount];
+        let answers = question.querySelectorAll('.option-div');
+
+        if (userSolution === quizArray[questionCount].correct) {
+            userOption.classList.add('correct');
+            scoreCount++;
+        } else {
+            userOption.classList.add("incorrect");
+            answers.forEach((element) => {
+                if (element.innerText == quizArray[questionCount].correct) {
+                    element.classList.add('correct')
+                }
+            });
+        }
+
+        clearInterval(countdown)
+        answers.forEach((element) => {
+            element.disabled = true;
+        })
     }
 
     function initial() {
