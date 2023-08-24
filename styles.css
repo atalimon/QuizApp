@@ -136,9 +136,23 @@ body {
     margin-top: 5%;
 }
 
-.container-mid button {
-    width: 8em;
-    height: 4.5em;
+.option-div {
+    width: 15em;
+    height: 3em;
     margin-top: 10%;
 }
+
+.incorrect{
+    background-color: white;
+    color: red;
+    border-color: red;
+}
+
+.correct{
+    background-color: white;
+    color: green;
+    border-color: green;
+}
+
+
 
