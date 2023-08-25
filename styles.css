@@ -9,21 +9,30 @@ body {
     background-color: darkolivegreen;
 }
 
+
 #start-button {
     position: absolute;
-    top: 5;
-    background-color: aqua;
-    width: 7.5em;
-    height: 4em;
-    border-radius: 25px;
+    margin-top:15% ;
+    background-color: darkolivegreen;
+    width: 15%;
+    height: 10%;
+    border-radius: 20px;
+    font-size: x-large;
+    border-color: white;
+    color: white;
+}
+#start-button:hover{
+    background-color: white;
+    color: darkolivegreen;
+    border-color: darkolivegreen;
 }
 
 .start-screen {
     display: flex;
     position: absolute;
-    margin-top: 25%;
+    margin-top: 10%;
     margin-left: 25%;
-    background-color: aliceblue;
+    background-color: whitesmoke;
     width: 50%;
     height: 50%;
     border-radius: 25px;
@@ -35,7 +44,7 @@ body {
     margin-top: 10%;
     margin-left: 25%;
     position: absolute;
-    background-color: bisque;
+    background-color: whitesmoke;
     width: 50%;
     height: 50%;
     border-radius: 25px;
@@ -48,7 +57,9 @@ body {
     display: flex;
     width: 100%;
     height: 18%;
-    border: 5px solid black;
+    font-size: x-large;
+    font-style: italic;
+    color: green;
 }
 .number-of-count {
     display: flex;
@@ -63,34 +74,71 @@ body {
 
 .container {
     display: flex;
-    border: 5px solid blue;
+    border: 2px solid darkolivegreen;
     height: 70%;
     width: 100%;
 }
 
 #next-button {
-    background-color: blueviolet;
+    background-color:darkolivegreen;
     height: 80%;
-    width: 25%;
-    border-radius: 25px;
+    width: 15%;
+    border-radius: 20px ;
+    border-color: white;
+    color: white;
+    font-size: x-large;
+
+}
+#next-button:hover {
+    background-color: green;
+    color: whitesmoke;
 }
 
 .buttoncontainer {
     display: flex;
-    border: 5px solid red;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 11%;
 }
 
+.container button {
+    width: 80%;
+    height: 17%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    border-radius: 10px;
+    font-size: x-large;
+
+    border-color: white;
+}
+
+p.question {
+    font-size: xx-large;
+    color: green;
+}
+
+.container button:hover {
+    background-color: rgb(202, 238, 202);
+    font-size: xx-large;
+}
+
+.container-mid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
 
 .score-container {
-    display: none;
-    margin-top: 25%;
+    margin-top: 10%;
     margin-left: 25%;
     position: absolute;
-    background-color: bisque;
+    background-color: white;
     width: 50%;
     height: 50%;
     border-radius: 25px;
@@ -102,21 +150,34 @@ body {
 
 .score {
     display: flex;
-    border: 5px solid black;
     width: 100%;
-    height: 40%;
-    margin-top: 20%;
+    height: 80%;
+    margin-top: 5%;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
+.score p{
+    font-size: xx-large;
+    color: green;
+    font-style: italic;
+}
 
 #restartbutton {
     margin-top: 5%;
-    background-color: blueviolet;
-    width: 25%;
-    height: 25%;
-    border-radius: 25px;
+    background-color: darkolivegreen;
+    width: 15%;
+    height: 12%;
+    border-radius: 20px;
+    font-size: x-large;
+    border-color: white;
+    color:white;
+}
+#restartbutton:hover {
+    background-color: white;
+    color: darkolivegreen;
+    border-color: darkolivegreen;
+
 }
 
 .hide {
@@ -124,23 +185,14 @@ body {
 }
 
 #aboutgame {
-    font-size: large;
+    color: darkolivegreen;
+    font-size: xx-large;
     padding: 10px;
     position: absolute;
     top: 10%;
+    font-style: italic;
 }
 
-
-.container-mid p {
-    font-size: large;
-    margin-top: 5%;
-}
-
-.option-div {
-    width: 15em;
-    height: 3em;
-    margin-top: 10%;
-}
 
 .incorrect{
     background-color: white;
