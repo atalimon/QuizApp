@@ -1,5 +1,5 @@
 // Refs
-document.addEventListener("DOMContentLoaded", () => {
+//document.addEventListener("DOMContentLoaded", () => {
     let startDisplay = document.querySelector(".start-screen");
     let startButton = document.getElementById("start-button");
     let displayContainer = document.querySelector(".display-container");
@@ -28,16 +28,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     restartButton.addEventListener('click', () => {
-        initial();
-        displayContainer.classList.add('hide');
+        displayContainer.classList.remove('hide');
         scoreContainer.classList.add('hide')
+        initial();
     });
 
     nextButton.addEventListener('click', (displayNext = () => {
         questionCount += 1;
         if (questionCount == quizArray.length) {
             displayContainer.classList.add("hide");
-            scoreContainer.classList.add('hide');
+            scoreContainer.classList.remove('hide');
             userScore.innerHTML = "Your Score is " + scoreCount + " out of " + questionCount;
         } else {
             questionCounter.innerHTML = questionCount + 1 + ' of ' + quizArray.length + ' Question'
@@ -68,6 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         quizCards[questionCount].classList.remove('hide');
+        
     };
 
 
@@ -78,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
             i.answer.sort(()=> Math.random() - 0.5);
             let div = document.createElement('div');
             div.classList.add('container-mid');
-            questionCount.innerHTML = 1+ " of " + quizArray.length + ' question ';
+            questionCount.innerHTML = 1 + " of " + quizArray.length + ' question ';
 
             let question_div = document.createElement("p");
             question_div.classList.add("question");
@@ -138,10 +139,11 @@ document.addEventListener("DOMContentLoaded", () => {
     window.onload = () => {
         startDisplay.classList.remove("hide");
         displayContainer.classList.add("hide");
+        scoreContainer.classList.add("hide");
 
 
 
         
     };
 
-});
+//});
