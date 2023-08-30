@@ -1,5 +1,6 @@
 // Refs
 //document.addEventListener("DOMContentLoaded", () => {
+    let catButton = document.getElementById("firstCat");
     let startDisplay = document.querySelector(".start-screen");
     let startButton = document.getElementById("start-button");
     let displayContainer = document.querySelector(".display-container");
@@ -14,33 +15,69 @@
     let scoreCount = 0;
     let countdown;
     let count = 10;
+    let choice;
 
 // Questions and answers array
 
-    const quizArray = [{id:"0", question:"Whats the capital city of Turkmenistan?", answer:['ashgabat', 'Mary', 'Arkadag', 'Lebap'], correct:"ashgabat"},
-    {id:"1", question:"Whats the capital city of Uzbekistan?", answer:['Baghdad', 'Mary', 'Buhara', 'Tashkent'], correct:"Tashkent"},
-    {id:"2", question:"Whats the capital city of USA?", answer:['New York', 'Mary', 'Washington', 'San Andreas'], correct:"Washington"},
-    {id:"3", question:"Whats the capital city of Ireland?", answer:['Mary', 'Dublin', 'Jerusalem', 'Macau'], correct:"Dublin"},
-    {id:"4", question:"Whats the capital city of Japan?", answer:['Kyoto', 'Mary', 'Osaka', 'Tokyo'], correct:"Tokyo"},
-    {id:"5", question:"Whats the capital city of North Korea?", answer:['Pyongyan', 'Mary', 'Incheon', 'Seoul'], correct:"Pyongyan"},
-    {id:"6", question:"Whats the capital city of Taiwan?", answer:['Taipei', 'Mary', 'Hong Kong', 'Osaka'], correct:"Taipei"}];
+    const quizArray = [
+        [{
+            id: "0",
+            question: "What is the largest mammal?",
+            answer: ['Elephant', 'Whale', 'Giraffe', 'Lion'],
+            correct: "Whale"
+        },
+        {
+            id: "1",
+            question: "Which gas do plants absorb from the atmosphere?",
+            answer: ['Oxygen', 'Nitrogen', 'Carbon Dioxide', 'Hydrogen'],
+            correct: "Carbon Dioxide"
+        },
+        {
+            id: "2",
+            question: "What is the chemical symbol for gold?",
+            answer: ['Ag', 'Au', 'Gd', 'Go'],
+            correct: "Au"
+        },
+        {
+            id: "3",
+            question: "What planet is known as the Red Planet?",
+            answer: ['Earth', 'Jupiter', 'Mars', 'Venus'],
+            correct: "Mars"
+        },
+        {
+            id: "4",
+            question: "Which gas is responsible for the ozone layer depletion?",
+            answer: ['Methane', 'Carbon Monoxide', 'Chlorofluorocarbons', 'Nitrous Oxide'],
+            correct: "Chlorofluorocarbons"
+        }],    
+    [{id:"0", question:"What is the capital city of Turkmenistan?", answer:['Ashgabat', 'Mary', 'Arkadag', 'Lebap'], correct:"Ashgabat"},
+    {id:"1", question:"What is the capital city of Uzbekistan?", answer:['Baghdad', 'Mary', 'Buhara', 'Tashkent'], correct:"Tashkent"},
+    {id:"2", question:"What is the capital city of USA?", answer:['New York', 'Mary', 'Washington', 'San Andreas'], correct:"Washington"},
+    {id:"3", question:"What is the capital city of Ireland?", answer:['Mary', 'Dublin', 'Jerusalem', 'Macau'], correct:"Dublin"},
+    {id:"4", question:"What is the capital city of Japan?", answer:['Kyoto', 'Mary', 'Osaka', 'Tokyo'], correct:"Tokyo"},
+    {id:"5", question:"What is the capital city of North Korea?", answer:['Pyongyan', 'Mary', 'Incheon', 'Seoul'], correct:"Pyongyan"},
+    {id:"6", question:"What is the capital city of Taiwan?", answer:['Taipei', 'Mary', 'Hong Kong', 'Osaka'], correct:"Taipei"}]];
   
+    
+   
 
 
     restartButton.addEventListener('click', () => {
+        initial();
         displayContainer.classList.remove('hide');
         scoreContainer.classList.add('hide')
-        initial();
+        questionCounter.innerHTML = 1 + ' of ' + quizArray[choice].length + ' Question';
     });
 
     nextButton.addEventListener('click', (displayNext = () => {
         questionCount += 1;
-        if (questionCount == quizArray.length) {
+        if (questionCount == quizArray[choice].length) {
+            clearInterval(countdown)
             displayContainer.classList.add("hide");
             scoreContainer.classList.remove('hide');
             userScore.innerHTML = "Your Score is " + scoreCount + " out of " + questionCount;
         } else {
-            questionCounter.innerHTML = questionCount + 1 + ' of ' + quizArray.length + ' Question'
+            questionCounter.innerHTML = questionCount + 1 + ' of ' + quizArray[choice].length + ' Question'
             quizDisplay(questionCount);
             count = 11;
             clearInterval(countdown)
@@ -73,13 +110,13 @@
 
 
     function createQuiz() {
-        quizArray.sort(()=> Math.random() - 0.5);
+        quizArray[choice].sort(()=> Math.random() - 0.5);
 
-        for (let i of quizArray) {
+        for (let i of quizArray[choice]) {
             i.answer.sort(()=> Math.random() - 0.5);
             let div = document.createElement('div');
             div.classList.add('container-mid');
-            questionCount.innerHTML = 1 + " of " + quizArray.length + ' question ';
+            questionCount.innerHTML = 1 + " of " + quizArray[choice].length + ' question ';
 
             let question_div = document.createElement("p");
             question_div.classList.add("question");
@@ -100,13 +137,13 @@
         let question = document.getElementsByClassName('container-mid')[questionCount];
         let answers = question.querySelectorAll('.option-div');
 
-        if (userSolution === quizArray[questionCount].correct) {
+        if (userSolution === quizArray[choice][questionCount].correct) {
             userOption.classList.add('correct');
             scoreCount++;
         } else {
             userOption.classList.add("incorrect");
             answers.forEach((element) => {
-                if (element.innerText == quizArray[questionCount].correct) {
+                if (element.innerText == quizArray[choice][questionCount].correct) {
                     element.classList.add('correct')
                 }
             });
@@ -119,18 +156,29 @@
     }
 
     function initial() {
+        console.log(quizArray[choice][2])
         questionContainer.innerHTML = "";
         questionCount = 0;
         scoreCount = 0;
-        countdown = 11;
+        countdown = 10;
         clearInterval(countdown);
         timerDisplay();
         createQuiz();
         quizDisplay(questionCount);
         
-    }   
+    }  
+    
+    catButton.addEventListener('click', () => {
+        choice = 0;
+        questionCounter.innerHTML = 1 + ' of ' + quizArray[choice].length + ' Question';
+        startDisplay.classList.add('hide');
+        displayContainer.classList.remove('hide');
+        initial();
+    })
 
     startButton.addEventListener("click", () => {
+        choice = 1;
+        questionCounter.innerHTML = 1 + ' of ' + quizArray[choice].length + ' Question';
         startDisplay.classList.add('hide');
         displayContainer.classList.remove('hide');
         initial();
@@ -140,9 +188,6 @@
         startDisplay.classList.remove("hide");
         displayContainer.classList.add("hide");
         scoreContainer.classList.add("hide");
-
-
-
         
     };
 
