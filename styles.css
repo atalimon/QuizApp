@@ -333,3 +333,53 @@ p.question {
 
 
 }
+
+@media (min-height: 892px) { 
+    body {
+        font-size: 1vw; 
+    }
+
+    .start-screen,
+    .display-container,
+    .score-container {
+        width: 80%; 
+        height: 80%;  
+        margin-top: 10%; 
+    }
+    #aboutgame {
+        font-size: 3.5vh;
+    }
+    #firstCat, #start-button{
+        font-size: 2vh;
+        width: 7em;
+
+    }
+
+    .headofdisplay {
+        font-size: 2vh; 
+    }
+    .display-container {
+        font-size: 2vh;
+    }
+
+    #next-button{
+        width: 30%;
+        font-size: 2vh;
+    }
+    p.question {
+        font-size: 2.5vh;
+    }
+    button.option-div {
+        font-size: 2vh;
+    }
+    #userscore {
+        font-size: 3.5vh;
+    }
+    button#restartbutton{
+        font-size: 2vh;
+        width: 30%;
+    }
+
+
+
+}
