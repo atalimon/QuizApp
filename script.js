@@ -59,16 +59,6 @@
     {id:"5", question:"What is the capital city of North Korea?", answer:['Pyongyan', 'Mary', 'Incheon', 'Seoul'], correct:"Pyongyan"},
     {id:"6", question:"What is the capital city of Taiwan?", answer:['Taipei', 'Mary', 'Hong Kong', 'Osaka'], correct:"Taipei"}]];
   
-    
-   
-
-
-    restartButton.addEventListener('click', () => {
-        initial();
-        displayContainer.classList.remove('hide');
-        scoreContainer.classList.add('hide')
-        questionCounter.innerHTML = 1 + ' of ' + quizArray[choice].length + ' Question';
-    });
 
     mainMenu.addEventListener('click', () => {
         window.location.reload()
