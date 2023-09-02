@@ -1,4 +1,4 @@
-# Quiz App
+### Quiz App
 
 The Quiz App is a simple web application that allows users to participate in quizzes by answering questions and receiving scores based on their answers. This README provides an overview of the Quiz App, how to set it up, and how to use it.
 
@@ -89,10 +89,5 @@ Contributions are welcome! If you'd like to contribute to the Quiz App, please f
 4. Push to the branch (`git push origin feature/YourFeature`).
 5. Open a pull request.
 
-## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-Happy quizzing! If you have any questions or encounter any issues, please feel free to reach out.
+## Happy Quizzing! :)
