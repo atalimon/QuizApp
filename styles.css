@@ -21,7 +21,7 @@ body {
     background-color: darkolivegreen;
     width: 15%;
     height: 10%;
-    border-radius: 15px;
+    border-radius: 10px;
     font-size: 2vw;
     border-color: white;
     color: white;
@@ -32,7 +32,7 @@ body {
     background-color: darkolivegreen;
     width: 15%;
     height: 10%;
-    border-radius: 15px;
+    border-radius: 10px;
     font-size: 2vw;
     border-color: white;
     color: white;
@@ -61,7 +61,7 @@ body {
     align-items: center;
     max-width: 850px;
     max-height: 1000px;
-    column-gap: 3%;
+    column-gap: 10%;
 }
 
 .display-container {
@@ -106,7 +106,7 @@ body {
     background-color:darkolivegreen;
     height: 80%;
     width: 15%;
-    border-radius: 20px ;
+    border-radius: 10px ;
     border-color: white;
     color: white;
     font-size: 2vw;
@@ -184,12 +184,32 @@ p.question {
     font-style: italic;
 }
 
-#restartbutton {
+.controllers {
+    display: flex;
+    flex-direction: row;
     margin-top: 20%;
+    width: 80%;
+    height: 50%;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10%;
+    
+}
+
+#restartbutton {
     background-color: darkolivegreen;
-    width: 15%;
-    height: 12%;
-    border-radius: 20px;
+    width: 25%;
+    height: 30%;
+    border-radius: 10px;
+    font-size: 2vw;
+    border-color: white;
+    color:white;
+}
+#refresh {
+    background-color: darkolivegreen;
+    width: 25%;
+    height: 30%;
+    border-radius: 10px;
     font-size: 2vw;
     border-color: white;
     color:white;
@@ -198,7 +218,11 @@ p.question {
     background-color: white;
     color: darkolivegreen;
     border-color: darkolivegreen;
-
+}
+#refresh:hover {
+    background-color: white;
+    color: darkolivegreen;
+    border-color: darkolivegreen;
 }
 
 .hide {
@@ -280,6 +304,10 @@ p.question {
         font-size: 2vh;
         width: 30%;
     }
+    button#refresh{
+        font-size: 2vh;
+        width: 30%;
+    }
 
 
 }
@@ -305,7 +333,10 @@ p.question {
         width: 7em;
 
     }
-
+    button#refresh{
+        font-size: 2vh;
+        width: 30%;
+    }
     .headofdisplay {
         font-size: 2vh; 
     }
@@ -353,6 +384,10 @@ p.question {
         font-size: 2vh;
         width: 7em;
 
+    }
+    button#refresh{
+        font-size: 2vh;
+        width: 30%;
     }
 
     .headofdisplay {
@@ -426,6 +461,10 @@ p.question {
         font-size: 3.5vh;
     }
     button#restartbutton{
+        font-size: 2vh;
+        width: 30%;
+    }
+    button#refresh{
         font-size: 2vh;
         width: 30%;
     }
