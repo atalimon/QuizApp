@@ -78,6 +78,7 @@
         questionCount += 1;
         if (questionCount == quizArray[choice].length) {
             clearInterval(countdown)
+            countdown =10;
             displayContainer.classList.add("hide");
             scoreContainer.classList.remove('hide');
             userScore.innerHTML = "Your Score is " + scoreCount + " out of " + questionCount;
