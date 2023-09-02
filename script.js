@@ -11,6 +11,7 @@
     let scoreContainer = document.querySelector(".score-container");
     let userScore = document.querySelector("#userscore");
     let restartButton = document.getElementById("restartbutton");
+    let mainMenu = document.getElementById("refresh")
     let questionCount;
     let scoreCount = 0;
     let countdown;
@@ -67,6 +68,10 @@
         displayContainer.classList.remove('hide');
         scoreContainer.classList.add('hide')
         questionCounter.innerHTML = 1 + ' of ' + quizArray[choice].length + ' Question';
+    });
+
+    mainMenu.addEventListener('click', () => {
+        window.location.reload()
     });
 
     nextButton.addEventListener('click', (displayNext = () => {
