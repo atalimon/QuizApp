@@ -73,10 +73,11 @@
             scoreContainer.classList.remove('hide');
             userScore.innerHTML = "Your Score is " + scoreCount + " out of " + questionCount;
         } else {
-            questionCounter.innerHTML = questionCount + 1 + ' of ' + quizArray[choice].length + ' Question'
+            questionCounter.innerHTML = questionCount + 1 + ' of ' + quizArray[choice].length 
             quizDisplay(questionCount);
             count = 11;
             clearInterval(countdown)
+            countdown = 10;
             timerDisplay();
         }
     })
@@ -85,7 +86,7 @@
     const timerDisplay = () => {
         countdown = setInterval(() => {
             count--;
-            timerCountdown.innerHTML = `${count}s`;
+            timerCountdown.innerHTML = `${count} s`;
             if(count == 0){
                 clearInterval(countdown);
                 displayNext();
@@ -112,7 +113,7 @@
             i.answer.sort(()=> Math.random() - 0.5);
             let div = document.createElement('div');
             div.classList.add('container-mid');
-            questionCount.innerHTML = 1 + " of " + quizArray[choice].length + ' question ';
+            questionCount.innerHTML = 1 + " of " + quizArray[choice].length ;
 
             let question_div = document.createElement("p");
             question_div.classList.add("question");
@@ -166,7 +167,7 @@
     
     catButton.addEventListener('click', () => {
         choice = 0;
-        questionCounter.innerHTML = 1 + ' of ' + quizArray[choice].length + ' Question';
+        questionCounter.innerHTML = 1 + ' of ' + quizArray[choice].length ;
         startDisplay.classList.add('hide');
         displayContainer.classList.remove('hide');
         initial();
@@ -174,7 +175,7 @@
 
     startButton.addEventListener("click", () => {
         choice = 1;
-        questionCounter.innerHTML = 1 + ' of ' + quizArray[choice].length + ' Question';
+        questionCounter.innerHTML = 1 + ' of ' + quizArray[choice].length ;
         startDisplay.classList.add('hide');
         displayContainer.classList.remove('hide');
         initial();
