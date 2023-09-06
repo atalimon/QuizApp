@@ -22,7 +22,7 @@ body {
     width: 15%;
     height: 10%;
     border-radius: 10px;
-    font-size: 3vw;
+    font-size: 1.5vw;
     border-color: white;
     color: white;
 }
@@ -33,7 +33,7 @@ body {
     width: 15%;
     height: 10%;
     border-radius: 10px;
-    font-size: 3vw;
+    font-size: 1.5vw;
     border-color: white;
     color: white;
 }
@@ -84,32 +84,35 @@ body {
     height: 18%;
     font-size: 3vw;
     font-style: bold;
-    color: green;
 }
 .number-of-count {
+    color: darkolivegreen;
     display: flex;
-    margin-right: 25%;
-    font-size: 3vw;
+    margin-right: 0%;
+    font-size: 2vw;
 }
 
 .timer-div {
+    color: darkolivegreen;
     align-items: center;
     justify-content: center;
     flex-direction: row-reverse;
     display: flex;
-    margin-left: 25%;
-    font-size: 3vw;
+    margin-left: 0%;
+    font-size: 2vw;
 }
 
 
 .container {
     display: flex;
+    justify-content: center;
+    align-items: center;
     border: 2px solid darkolivegreen;
     height: 70%;
     width: 100%;
 }
 #number-of-question {
-    font-size: 3vw;
+    font-size: 2vw;
 }
 
 
@@ -120,13 +123,15 @@ body {
     border-radius: 10px ;
     border-color: white;
     color: white;
-    font-size: 2vw;
+    font-size: 1.5vw;
     cursor: pointer;
+    display: none;
 
 }
 #next-button:hover {
     background-color: green;
     color: whitesmoke;
+    display: none;
 }
 
 .buttoncontainer {
@@ -138,19 +143,21 @@ body {
 }
 
 .container button {
-    width: 80%;
-    height: 17%;
+    width: 100%;
+    height: 30%;
     margin-top: 1%;
     margin-bottom: 1%;
     border-radius: 10px;
-    font-size: 2vw;
+    font-size: 1.8vw;
+    flex-basis: calc(50% - 10px);
 }
 
 p.question {
+    margin-top: 5%;
     margin-left: 3%;
     margin-right: 3%;
     text-align: center;
-    margin-bottom: 5%;
+    margin-bottom: 2%;
     font-weight: bold;
     font-size: 2vw;
     color: green;
@@ -167,8 +174,9 @@ p.question {
     align-items: center;
     justify-content: center;
     width: 100%;
-    margin-top: 2%;
-    margin-bottom: 2%;
+    height: 100%;
+    margin-top: 1%;
+    margin-bottom: 1%;
 }
 
 
@@ -181,6 +189,17 @@ p.question {
     align-items: center;
     justify-content: center;
     max-width: 850px;
+}
+.ops {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 80%;
+    align-content: flex-start;
+    column-gap: 3%;
+
 }
 
 .score {
@@ -225,7 +244,7 @@ p.question {
     width: 25%;
     height: 30%;
     border-radius: 10px;
-    font-size: 2vw;
+    font-size: 1.5vw;
     border-color: white;
     color:white;
     cursor: pointer;
@@ -303,6 +322,7 @@ p.question {
 
     #next-button{
         width: 30%;
+        display: none;
         font-size: 2vw;
     }
     p.question {
@@ -313,6 +333,9 @@ p.question {
     }
     #userscore {
         font-size: 2vw;
+    }
+    .ops {
+        width: fit-content;
     }
     button#restartbutton{
         font-size: 2vw;
@@ -341,6 +364,12 @@ p.question {
     #aboutgame {
         font-size: 5vw;
     }
+    .ops {
+        margin-top: 10%;
+        width: 80%;
+        height: 40%;
+
+    }
     #firstCat, #start-button{
         font-size: 4vw;
         width: 30%;
@@ -363,6 +392,7 @@ p.question {
     }
 
     #next-button{
+        display: none;
         width: 30%;
         font-size: 4vw;
     }
@@ -383,60 +413,11 @@ p.question {
 
 }
 
-@media (min-height: 892px) { 
-    body {
-        font-size: 1vw; 
-    }
-
-    .start-screen,
-    .display-container,
-    .score-container {
-        width: 80%; 
-        height: 80%;  
-    }
-    #aboutgame {
-        font-size: 3.5vw;
-    }
-    #firstCat, #start-button{
-        font-size: 2vw;
-        width: 7em;
-
-    }
-    button#refresh{
-        font-size: 2vw;
-        width: 30%;
-    }
-
-    .headofdisplay {
-        font-size: 2vw; 
-    }
-    .display-container {
-        font-size: 2vw;
-    }
-
-    #next-button{
-        width: 30%;
-        font-size: 2vw;
-    }
-    p.question {
-        font-size: 2.5vw;
-    }
-    button.option-div {
-        font-size: 2vw;
-    }
-    #userscore {
-        font-size: 3.5vw;
-    }
-    button#restartbutton{
-        font-size: 2vw;
-        width: 30%;
-    }
 
 
 
-}
 
-@media (min-height: 829px) { 
+@media (max-width: 420px) { 
     body {
         font-size: 1vw; 
     }
@@ -449,72 +430,11 @@ p.question {
     }
     #aboutgame {
         font-size: 5vw;
-    }
-    #firstCat, #start-button{
-        font-size: 4.5vw;
-        width: 30%;
-
-    }
-    #time-left {
-        font-size: 5vw;
-
-    }
-    .timer-div {
-       align-items: center;
-       justify-content: center;
-    }
-    .number-of-count {
-        align-items: center;
-        justify-content: center;
-        margin-right: 0%;
-    }
-
-    #number-of-question  {
-        font-size: 5vw;
-
-    }
-
-    #next-button{
-        width: 30%;
-        font-size: 4.5vw;
-    }
-    p.question {
-        font-size: 5vw;
-    }
-    button.option-div {
-        font-size: 5vw;
-    }
-    #userscore {
-        font-size: 3.5vw;
-    }
-    #userscore {
-        font-size: 5vw;
-    }
-
-    button#refresh{
-        font-size: 5vw;
-        width: 50%;
-    }
-}
-
-@media (min-width: 414px) { 
-    body {
-        font-size: 1vw; 
-    }
-
-    .start-screen,
-    .display-container,
-    .score-container {
-        width: 80%; 
-        height: 80%;  
-    }
-    #aboutgame {
-        font-size: 3vw;
    
     }
     #firstCat, #start-button{
-        font-size: 2vw;
-        width: 7em;
+        font-size: 3.5vw;
+        width: 30%;
 
     }
 
@@ -522,31 +442,35 @@ p.question {
         font-size: 3vw; 
     }
     #time-left {
-        font-size: 2.5vw;
+        font-size: 6vw;
     }
     #number-of-question{
-        font-size: 2.5vw;
+        font-size: 6vw;
     }
 
     #next-button{
         width: 30%;
-        font-size: 2vw;
-    }
-    p.question {
-        font-size: 2.5vw;
-    }
-    button.option-div {
-        font-size: 3vw;
-    }
-    #userscore {
         font-size: 3.5vw;
     }
+    p.question {
+        font-size: 5vw;
+    }
+    button.option-div {
+        font-size: 4vw;
+    }
+    .ops {
+        width: 98%;
+        height: 80%;
+    }
+    #userscore {
+        font-size: 5vw;
+    }
     button#restartbutton{
-        font-size: 3vw;
-        width: 30%;
+        font-size: 5vw;
+        width: 50%;
     }
     button#refresh{
-        font-size: 2vw;
-        width: 30%;
+        font-size: 4vw;
+        width: 40%;
     }
 }
