@@ -17,6 +17,7 @@
     let countdown;
     let count = 10;
     let choice;
+    let minicount = 2;
 
 // Questions and answers array
 
@@ -86,7 +87,7 @@
     const timerDisplay = () => {
         countdown = setInterval(() => {
             count--;
-            timerCountdown.innerHTML = `${count} s`;
+            timerCountdown.innerHTML = `${count}s`;
             if(count == 0){
                 clearInterval(countdown);
                 displayNext();
@@ -120,10 +121,10 @@
             question_div.innerHTML = i.question;
             div.appendChild(question_div)
             
-            div.innerHTML += `<button class="option-div" onclick="checker(this)">${i.answer[0]}</button>
+            div.innerHTML += `<div class="ops"><button class="option-div" onclick="checker(this)">${i.answer[0]}</button>
             <button class="option-div" onclick="checker(this)">${i.answer[1]}</button>
             <button class="option-div" onclick="checker(this)">${i.answer[2]}</button>
-            <button class="option-div" onclick="checker(this)">${i.answer[3]}</button>
+            <button class="option-div" onclick="checker(this)">${i.answer[3]}</button></div>
             `;
             questionContainer.appendChild(div);
         }
@@ -137,6 +138,12 @@
         if (userSolution === quizArray[choice][questionCount].correct) {
             userOption.classList.add('correct');
             scoreCount++;
+            clearInterval(countdown)
+            function mynext () {
+                displayNext()
+            }
+            setTimeout(mynext, 3000)
+            
         } else {
             userOption.classList.add("incorrect");
             answers.forEach((element) => {
@@ -144,6 +151,11 @@
                     element.classList.add('correct')
                 }
             });
+            clearInterval(countdown)
+            function mynext () {
+                displayNext()
+            }
+            setTimeout(mynext, 3000)
         }
 
         clearInterval(countdown)
