@@ -84,6 +84,7 @@ body {
     height: 18%;
     font-size: 3vw;
     font-style: bold;
+    column-gap: 50%;
 }
 .number-of-count {
     color: darkolivegreen;
@@ -457,9 +458,12 @@ p.question {
     }
     button.option-div {
         font-size: 4vw;
+        width: 30%;
+        height: 20%;
     }
     .ops {
-        width: 98%;
+        margin-top: 15%;
+        width: 90%;
         height: 80%;
     }
     #userscore {
